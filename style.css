@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: #000;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: #00ffff;
+}
+
+/* Fundo com cálculos transparentes */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.math {
+  position: absolute;
+  color: white;
+  font-size: 4rem;
+  white-space: nowrap;
+  animation: moveMath 30s linear infinite;
+}
+
+@keyframes moveMath {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Caixa da calculadora */
+.calculator {
+  position: relative;
+  background: #111;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #00ffff55, inset 0 0 10px #00ffff33;
+  padding: 20px;
+  width: 300px;
+  z-index: 10;
+}
+
+#display {
+  width: 100%;
+  height: 60px;
+  background: #000;
+  border: none;
+  color: #00ffff;
+  font-size: 2rem;
+  text-align: right;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px #00ffff33;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  cursor: pointer;
+  color: #00ffff;
+  background: #000;
+  box-shadow: 0 4px #00ffff55;
+  transition: all 0.1s ease-in-out;
+}
+
+button.op {
+  color: #ccc;
+}
+
+button:active {
+  transform: translateY(3px);
+  box-shadow: inset 0 0 10px #00ffff;
+}
